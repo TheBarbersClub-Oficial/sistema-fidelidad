@@ -11,8 +11,7 @@ def get_db_connection():
         password="9o5XfZAMv3xaiVsR",
         database="test",
         port=4000,
-        ssl_verify_cert=True,
-        ssl_ca='/etc/ssl/certs/ca-certificates.crt'
+        ssl_disabled=True,
     )
 
 @app.route('/')
