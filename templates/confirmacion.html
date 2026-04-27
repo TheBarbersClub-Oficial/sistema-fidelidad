@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estado de tu Tarjeta</title>
+    <style>
+        body { background-color: #121212; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
+        .tarjeta { border: 2px solid #d4af37; padding: 30px; display: inline-block; border-radius: 15px; background: #1e1e1e; }
+        h1 { color: #d4af37; margin-bottom: 10px; }
+        .contador { font-size: 60px; margin: 20px 0; }
+        .meta { color: #f1c40f; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <h1>¡Listo, {{ nombre }}! 💈</h1>
+        <p>Tu registro en la Barbería Messi fue exitoso.</p>
+        <div class="contador">⭐ {{ sellos }}</div>
+       {% if sellos >= 6 %}
+    <div style="background: white; color: #121212; padding: 15px; border-radius: 10px; border: 3px solid #d4af37; margin-top: 20px;">
+        <h2 style="margin: 0;">¡FELICIDADES! 🎉</h2>
+        <p style="font-weight: bold;">Te has ganado algo muy especial por ser un cliente fiel. ¡Reclámalo con tu barbero!</p>
+    </div>
+{% else %}
+    <p class="meta">¡Te faltan {{ 6 - sellos }} sellos para algo muy especial! 🎁</p>
+{% endif %}
+        <br>
+        <a href="/" style="color: #d4af37; text-decoration: none;">← Volver</a>
+    </div>
+</body>
+</html>
