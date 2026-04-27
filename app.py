@@ -6,10 +6,11 @@ app = Flask(__name__)
 # CONFIGURACIÓN DE TU BASE DE DATOS
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Admin123", # <--- CAMBIA ESTO
-        database="barberia_db"
+        host="gateway01.us-west-2.prod.aws.tidbcloud.com", # Este es el host de TiDB
+        user="3JX3rwaTzGPCk5v.root",   # El que termina en .root que copiaste
+        password="qH2RAKU8fA746yan", # La contraseña que generaste en TiDB
+        database="test",          # Usaremos la base 'test' que seleccionaste en el editor
+        port=4000
     )
 
 @app.route('/')
